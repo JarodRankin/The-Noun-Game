@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import GameRules from './GameRules';
 import CreateTeams from './CreateTeams';
+import ViewTeams from './ViewTeams';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           />
           <Route path="/gameRules" element={<GameRules />} />
           <Route path="/createTeams" element={<CreateTeams />} />
+          <Route path="/viewTeams" element={<ViewTeams />} />
         </Routes>
       </div>
     </Router>
