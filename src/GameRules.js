@@ -4,9 +4,8 @@ function GameRules() {
         <h1>Welcome to the Noun Game!</h1>
         <p>Here are the rules of the game.</p>
         <ol>
-            <li>You must have at least 4 players to play.</li>
+            <li>You must have at least 4 players to play and a maximum of 12 players.</li>
             <li>Each player will submit a person, a place, and a thing.</li>
-            <li>There must be at least 36 nouns in the game so depending on the amount of players you may be asked to submit more than one.</li>
             <li>Teams will be assigned at random.</li>
             <li>There are 3 rounds, Round 1: talk it out, Round 2: one word, Round 3: act it out, Round 4: one action.</li>
         </ol>

@@ -14,7 +14,7 @@ function App() {
             element={
               <>
                 <h1>The Noun Game</h1>
-                <h2>Also known as the person, place, thing game</h2>
+                <h2>Also known as the person, place, thing game, or the Fishbowl Game</h2>
                 <button onClick={() => (window.location.href = '/gameRules')}>Start a Game</button>
               </>
             }
