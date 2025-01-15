@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import GameRules from './GameRules';
 import CreateTeams from './CreateTeams';
 import ViewTeams from './ViewTeams';
+import SubmitNouns from './SubmitNouns';
+import GameStart from './GameStart';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="/gameRules" element={<GameRules />} />
           <Route path="/createTeams" element={<CreateTeams />} />
           <Route path="/viewTeams" element={<ViewTeams />} />
+          <Route path="/submitNouns" element={<SubmitNouns />} />
+          <Route path="/gameStart" element={<GameStart />} />
         </Routes>
       </div>
     </Router>
