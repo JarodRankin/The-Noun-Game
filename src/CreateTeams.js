@@ -38,7 +38,6 @@ function CreateTeams() {
     }
 
     const checkPlayerNames = () => {
-        console.log(playersList);
         const isComplete = playersList.every(name => name !== '');
         if(isComplete){
             setIsValidNames(true);

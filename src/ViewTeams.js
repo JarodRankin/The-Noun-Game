@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function ViewTeams() {
     const location = useLocation();
@@ -8,11 +8,15 @@ function ViewTeams() {
     const [team2, setTeam2] = useState([]);
     const hasRandomized = useRef(false);
 
+    const navigate = useNavigate();
+
     const randomizeTeams = () => {
         if (hasRandomized.current) return;
         
         const newPlayerNames = [...playersList]
             .sort(() => Math.random() - 0.5);
+
+        console.log(newPlayerNames);
 
         const team1Players = newPlayerNames.filter((_, index) => index % 2 === 0);
         const team2Players = newPlayerNames.filter((_, index) => index % 2 !== 0);
@@ -20,12 +24,18 @@ function ViewTeams() {
         setTeam1(team1Players);
         setTeam2(team2Players);
 
+        console.log(team1);
+
         hasRandomized.current = true;
     };
 
     const reloadPage = () => {
         window.location.reload();
-      };
+    };
+
+    const submitTotalNouns = (selectedTotal) => {
+        navigate('/submitNouns', { state: { selectedTotal, team1, team2 } });
+    }
 
     useEffect(() => {
         randomizeTeams();
@@ -52,7 +62,21 @@ function ViewTeams() {
             ) : (
                 <p>No players have been added.</p>
             )}
-            <button onClick={reloadPage}>Randomize Teams</button>
+            <div style={{ marginBottom: '50px', fontSize: '18px' }}>
+                <button onClick={reloadPage}>Randomize Teams</button>
+            </div>
+            <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
+                <button 
+                    onClick={() => submitTotalNouns(playersList.length * 3)}
+                    style={{ fontSize: '18px' }}>
+                    Play with {playersList.length * 3} Nouns
+                </button>
+                <button 
+                    onClick={() => submitTotalNouns(playersList.length * 6)}
+                    style={{ fontSize: '18px' }}>
+                    Play with {playersList.length * 6} Nouns
+                </button>
+            </div>
         </div>
     );
 }
