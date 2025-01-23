@@ -46,7 +46,7 @@ function SubmitNouns() {
         } else {
             if(team2.length === currentPlayer + 1) {
                 const allSubmittedNouns = updatedList;
-                navigate('/gameStart', { state: { allSubmittedNouns } });
+                navigate('/gameStart', { state: { allSubmittedNouns, team1, team2 } });
             } else {
                 setPlayerCount(currentPlayer + 1);
             }
